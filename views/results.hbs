@@ -9,8 +9,24 @@
         <button type="button" name="Search">Search</button>
       </form>
     </nav>
-    <p class="nor">37 results</p>
-    <div class="results">
+    <p class="nor">{{results.length}} results</p>
+		<div>
+			{{#each results as |result|}}
+			<div class="results">
+				{{result.url}}
+				<h2><a href={{result.url}}>{{result.title}}</a></h2>
+				{{result.description}}
+				<ul>
+					{{#each result.links as |link|}}
+					<li><a href="{{link.url}}">{{link.title}}</a></li>
+					{{/each}}
+				</ul>
+			</div>
+
+
+			{{/each}}
+		</div>
+    <!-- <div class="results">
       www.w3school.com
       <h2><a href="#">Javascript Tutorial - W3School</a></h2>
       Well organized and easy to understand Web building tutorials with lots of
@@ -44,4 +60,4 @@
         <li><a href="#">JavaScript Online</a></li>
         <li><a href="#">JavaScript Definition</a></li>
       </ul>
-    </div>
+    </div> -->
