@@ -1,16 +1,15 @@
 <nav class="results">
       <img src="/img/google.png" alt="Google logo" />
-      <form>
+      <form action="/">
         <input
           type="text"
-          name="Search box"
+          name="searchBox"
           placeholder="search for anything"
         />
-        <button type="button" name="Search">Search</button>
+        <button>Search</button>
       </form>
     </nav>
-    <p class="nor">{{results.length}} results</p>
-		<div>
+		<!-- <div>
 			{{#each results as |result|}}
 			<div class="results">
 				{{result.url}}
@@ -25,7 +24,11 @@
 
 
 			{{/each}}
-		</div>
+		</div> -->
+
+ <!-- Partial -->
+{{> result_par results=searchResults}}
+
     <!-- <div class="results">
       www.w3school.com
       <h2><a href="#">Javascript Tutorial - W3School</a></h2>
