@@ -3,11 +3,10 @@ const express = require('express')
 const router = express.Router()
 
 // Create POST controller
-
-// Views
-// Create here a controller that accepts GET requests and renders the "search" page
-router.get('/results', (req, res) => {
-  let results = [
+router.post('/', (req, res) => {
+  // console.log(res)
+  console.log(req.body)
+  let searchResults = [
     {
       title: 'Javascript Tutorial',
       description:
@@ -65,7 +64,17 @@ router.get('/results', (req, res) => {
       ]
     }
   ]
-  res.render('results', { results })
+  let resultArray = searchResults.filter(e =>
+    e.description.includes(req.body.searchBox)
+  )
+  res.render('results', { searchResults: resultArray })
+})
+
+// Views
+// Create here a controller that accepts GET requests and renders the "search" page
+router.get('/results', (req, res) => {
+  console.log(req.body)
+  res.render('results', { searchResults })
 })
 
 // Export module
