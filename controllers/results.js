@@ -72,8 +72,9 @@ router.post('/', (req, res) => {
 
 // Views
 // Create here a controller that accepts GET requests and renders the "search" page
-router.get('/results', (req, res) => {
+router.get('/', (req, res) => {
   console.log(req.body)
+  let searchResults = []
   res.render('results', { searchResults })
 })
 
