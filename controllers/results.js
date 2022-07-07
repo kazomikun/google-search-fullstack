@@ -64,10 +64,6 @@ router.post('/', (req, res) => {
       ]
     }
   ]
-  let resultArray = searchResults.filter(e =>
-    e.description.includes(req.body.searchBox)
-  )
-  res.render('results', { searchResults: resultArray })
 })
 
 // Views
