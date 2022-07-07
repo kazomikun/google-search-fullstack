@@ -1,17 +1,16 @@
-    <p class="nor">{{searchResults.length}} results</p>
-		<div>
-			{{#each searchResults as |result|}}
-			<div class="results">
-				{{result.url}}
-				<h2><a href={{result.url}}>{{result.title}}</a></h2>
-				{{result.description}}
-				<ul>
-					{{#each result.links as |link|}}
-					<li><a href="{{link.url}}">{{link.title}}</a></li>
-					{{/each}}
-				</ul>
-			</div>
-
-
+<p class="nor">{{searchResults.length}} results</p>
+<div>
+	{{#each searchResults as |result|}}
+	<div class="results">
+		{{result.url}}
+		<h2><a href={{result.url}}>{{result.title}}</a></h2>
+		{{result.description}}
+		<ul>
+			{{#each result.links as |link|}}
+			<li><a href="{{link.url}}">{{link.title}}</a></li>
 			{{/each}}
-		</div>
+		</ul>
+	</div>
+
+	{{/each}}
+</div>
